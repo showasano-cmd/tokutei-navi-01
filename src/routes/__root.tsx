@@ -5,11 +5,29 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
+const SITE_TITLE = "tokutei-navi-01";
 const SITE_DESCRIPTION =
   "特定技能1号人材は在留期限内に2号へ間に合いますか？在留期限・日本語証明・管理者実務経験の開始日を入力するだけで、N3取得と技能試験の試験スケジュールと照合し、2号移行の実現可能性を即時診断します。";
-
 const OG_IMAGE =
   "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2f52dfb8-7c13-4fca-8309-b1cd7a184707/id-preview-c87f673b--3c40c4b5-5cfd-49c7-b106-1d7a81860a39.lovable.app-1780985158566.png";
+
+// NOTE: Do not add, duplicate, or modify meta tags below. All meta is managed here only.
+const META_TAGS = [
+  { charSet: "utf-8" },
+  { name: "viewport", content: "width=device-width, initial-scale=1" },
+  { title: SITE_TITLE },
+  { name: "description", content: SITE_DESCRIPTION },
+  { name: "author", content: "Lovable" },
+  { property: "og:title", content: SITE_TITLE },
+  { property: "og:description", content: SITE_DESCRIPTION },
+  { property: "og:type", content: "website" },
+  { property: "og:image", content: OG_IMAGE },
+  { name: "twitter:card", content: "summary" },
+  { name: "twitter:site", content: "@Lovable" },
+  { name: "twitter:title", content: SITE_TITLE },
+  { name: "twitter:description", content: SITE_DESCRIPTION },
+  { name: "twitter:image", content: OG_IMAGE },
+] as const;
 
 function NotFoundComponent() {
   return (
@@ -71,22 +89,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "tokutei-navi-01" },
-      { name: "description", content: SITE_DESCRIPTION },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "tokutei-navi-01" },
-      { property: "og:description", content: SITE_DESCRIPTION },
-      { property: "og:type", content: "website" },
-      { property: "og:image", content: OG_IMAGE },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "tokutei-navi-01" },
-      { name: "twitter:description", content: SITE_DESCRIPTION },
-      { name: "twitter:image", content: OG_IMAGE },
-    ],
+    meta: [...META_TAGS],
     links: [
       { rel: "stylesheet", href: appCss },
       {
