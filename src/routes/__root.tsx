@@ -1,16 +1,12 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import {
-  Outlet,
-  Link,
-  createRootRouteWithContext,
-  useRouter,
-  HeadContent,
-  Scripts,
-} from "@tanstack/react-router";
+import { Outlet, Link, createRootRouteWithContext, useRouter, HeadContent, Scripts } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+
+const SITE_DESCRIPTION =
+  "特定技能1号人材は在留期限内に2号へ間に合いますか？在留期限・日本語証明・管理者実務経験の開始日を入力するだけで、N3取得と技能試験の試験スケジュールと照合し、2号移行の実現可能性を即時診断します。";
 
 function NotFoundComponent() {
   return (
@@ -44,9 +40,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
+        <h1 className="text-xl font-semibold tracking-tight text-foreground">This page didn't load</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Something went wrong on our end. You can try refreshing or head back home.
         </p>
@@ -78,20 +72,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "tokutei-navi-01" },
-      { name: "description", content: "特定技能1号人材は在留期限内に2号へ間に合いますか？
-在留期限・日本語証明・管理者実務経験の開始日を入力するだけで、N3取得と技能試験の試験スケジュールと照合し、2号移行の実現可能性を即時診断します。" },
+      { name: "description", content: SITE_DESCRIPTION },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "tokutei-navi-01" },
-      { property: "og:description", content: "特定技能1号人材は在留期限内に2号へ間に合いますか？
-在留期限・日本語証明・管理者実務経験の開始日を入力するだけで、N3取得と技能試験の試験スケジュールと照合し、2号移行の実現可能性を即時診断します。" },
+      { property: "og:description", content: SITE_DESCRIPTION },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "tokutei-navi-01" },
-      { name: "twitter:description", content: "特定技能1号人材は在留期限内に2号へ間に合いますか？
-在留期限・日本語証明・管理者実務経験の開始日を入力するだけで、N3取得と技能試験の試験スケジュールと照合し、2号移行の実現可能性を即時診断します。" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2f52dfb8-7c13-4fca-8309-b1cd7a184707/id-preview-c87f673b--3c40c4b5-5cfd-49c7-b106-1d7a81860a39.lovable.app-1780985158566.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2f52dfb8-7c13-4fca-8309-b1cd7a184707/id-preview-c87f673b--3c40c4b5-5cfd-49c7-b106-1d7a81860a39.lovable.app-1780985158566.png" },
+      { name: "twitter:description", content: SITE_DESCRIPTION },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2f52dfb8-7c13-4fca-8309-b1cd7a184707/id-preview-c87f673b--3c40c4b5-5cfd-49c7-b106-1d7a81860a39.lovable.app-1780985158566.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2f52dfb8-7c13-4fca-8309-b1cd7a184707/id-preview-c87f673b--3c40c4b5-5cfd-49c7-b106-1d7a81860a39.lovable.app-1780985158566.png",
+      },
     ],
     links: [
       {
