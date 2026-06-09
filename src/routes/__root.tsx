@@ -8,6 +8,9 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 const SITE_DESCRIPTION =
   "特定技能1号人材は在留期限内に2号へ間に合いますか？在留期限・日本語証明・管理者実務経験の開始日を入力するだけで、N3取得と技能試験の試験スケジュールと照合し、2号移行の実現可能性を即時診断します。";
 
+const OG_IMAGE =
+  "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2f52dfb8-7c13-4fca-8309-b1cd7a184707/id-preview-c87f673b--3c40c4b5-5cfd-49c7-b106-1d7a81860a39.lovable.app-1780985158566.png";
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -77,34 +80,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "tokutei-navi-01" },
       { property: "og:description", content: SITE_DESCRIPTION },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: OG_IMAGE },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "tokutei-navi-01" },
       { name: "twitter:description", content: SITE_DESCRIPTION },
-      {
-        property: "og:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2f52dfb8-7c13-4fca-8309-b1cd7a184707/id-preview-c87f673b--3c40c4b5-5cfd-49c7-b106-1d7a81860a39.lovable.app-1780985158566.png",
-      },
-      {
-        name: "twitter:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2f52dfb8-7c13-4fca-8309-b1cd7a184707/id-preview-c87f673b--3c40c4b5-5cfd-49c7-b106-1d7a81860a39.lovable.app-1780985158566.png",
-      },
-      { name: "description", content: "特定技能1号人材は在留期限内に2号へ間に合いますか？
-在留期限・日本語証明・管理者実務経験の開始日を入力するだけで、N3取得と技能試験の試験スケジュールと照合し、2号移行の実現可能性を即時診断します。" },
-      { property: "og:description", content: "特定技能1号人材は在留期限内に2号へ間に合いますか？
-在留期限・日本語証明・管理者実務経験の開始日を入力するだけで、N3取得と技能試験の試験スケジュールと照合し、2号移行の実現可能性を即時診断します。" },
-      { name: "twitter:description", content: "特定技能1号人材は在留期限内に2号へ間に合いますか？
-在留期限・日本語証明・管理者実務経験の開始日を入力するだけで、N3取得と技能試験の試験スケジュールと照合し、2号移行の実現可能性を即時診断します。" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2f52dfb8-7c13-4fca-8309-b1cd7a184707/id-preview-c87f673b--3c40c4b5-5cfd-49c7-b106-1d7a81860a39.lovable.app-1780985158566.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2f52dfb8-7c13-4fca-8309-b1cd7a184707/id-preview-c87f673b--3c40c4b5-5cfd-49c7-b106-1d7a81860a39.lovable.app-1780985158566.png" },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap",
