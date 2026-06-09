@@ -201,7 +201,7 @@ function buildResultHtml(opts: {
     <div class="lhead"><div class="lnum">01</div><div class="ltitle">現在地と残り期間</div></div>
     <div class="mrow">
       <div class="met"><div class="mlb">在留期限まで</div><div class="mv ${mCoe < 6 ? "d" : mCoe < 12 ? "c" : "o"}">${Math.max(0, mCoe)}<span class="mu">ヶ月</span></div></div>
-      <div class="met"><div class="mlb">N3有効機会</div><div class="mv ${jlptsBefore.length === 0 ? "d" : jlptsBefore.length === 1 ? "c" : "o"}">${jlptsBefore.length}<span class="mu">回</span></div></div>
+      <div class="met"><div class="mlb">N3有効機会</div><div class="mv ${firstN3 ? "o" : "d"}">${firstN3 ? 1 : 0}<span class="mu">回</span></div></div>
       <div class="met"><div class="mlb">実務経験</div><div class="mv ${expSoFar < 6 ? "d" : expSoFar < 18 ? "c" : "o"}">${expSoFar}<span class="mu">ヶ月</span></div></div>
     </div>
     <div class="basis-note">判定色の目安：在留期限まで6ヶ月未満は赤、12ヶ月未満は黄、12ヶ月以上は緑を基本表示しています。N3有効機会は、JLPT受験日だけでなく合否発表と申請準備期間を考慮した概算です。実際の判断では技能試験機会・管理者実務経験の不足月数も合わせて確認してください。</div>
