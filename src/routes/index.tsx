@@ -282,7 +282,7 @@ function buildResultHtml(opts: {
         <div class="cta-card-icon">🎯</div>
         <div class="cta-card-title">インテグリティ診断<br>投資可否の判断</div>
         <div class="cta-card-body">現場動画シナリオへの「判断＋理由」で管理職素養を測定。この人材に投資継続すべきかをスコアで判断。</div>
-        <button type="button" class="cta-btn cta-btn-disabled" disabled>インテグリティ診断（準備中）</button>
+        <a class="cta-btn cta-btn-primary" href="https://tokutei-integrity-01.lovable.app/" target="_blank" rel="noopener noreferrer">インテグリティ診断 →</a>
       </div>
     </div>
   </div>`;
