@@ -366,7 +366,7 @@ function Index() {
       } else if (action === "print") {
         window.print();
       } else if (action === "precheck") {
-        window.location.href = "https://precheck-de-01.lovable.app/";
+        window.open("https://precheck-de-01.lovable.app/", "_blank", "noopener,noreferrer");
       }
     };
     el.addEventListener("click", onClick);
